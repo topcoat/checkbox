@@ -36,7 +36,7 @@ Base styles for checkboxes. The `<label>` needs to be placed after the `<input>`
 
 input[type="checkbox"],
 input[type="radio"]
-    display: none
+    // display: none
 
 .topcoat-checkbox--left:before,
 .topcoat-checkbox--right:after
@@ -57,22 +57,12 @@ input[type="radio"]
 .topcoat-checkbox--right:after
     float: right
 
-/*FIXME need to see how menu did this*/
-.dark-checkbox:before,
-.dark-checkbox:after {
-    background-image: url("../img/dark-sprites2x.png");
-}
-
-.light-checkbox:before,
-.light-checkbox:after {
-    background-image: url("../img/light-sprites2x.png");
-}
-
-/*FIXME radio in seperate repo*/
+.topcoat-checkbox:before,
+.topcoat-checkbox:after
+    background-image: var-checkbox-unchecked
+    
 .topcoat-checkbox--left,
 .topcoat-checkbox--right,
-.topcoat-radio--left,
-.topcoat-radio--right
     display: inline-block
     margin: 5px 0
     cursor: pointer
@@ -80,26 +70,16 @@ input[type="radio"]
     -webkit-touch-callout: none
     -webkit-user-select: none
 
-/*FIXME radio in seperate repo*/
-.topcoat-checkbox--right,
-.topcoat-radio--right
-    /*Set this width value to make sure all the labels line up*/
-    width: 200px
-
 input[type="checkbox"]:checked + .topcoat-checkbox--left:before,
 input[type="checkbox"]:checked + .topcoat-checkbox--right:after
-    background-position: left -2px
+    background-image: var-checkbox-checked
 
 input[type="checkbox"]:disabled + label
     opacity: 0.3
     cursor: default
     pointer-events: none
 
-
-
-
-/*
-.topcoat-checkbox
+.topcoat-not-checkbox
     input-base()
     padding: var-padding;
     font-size: var-font-size;
@@ -112,4 +92,3 @@ input[type="checkbox"]:disabled + label
     box-shadow: var-box-shadow;
     border: var-border;
     border-radius: var-border-radius;
-*/
