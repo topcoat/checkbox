@@ -64,9 +64,23 @@ input[type="checkbox"]:disabled + label
     -webkit-touch-callout: none
     -webkit-user-select: none
 
+.topcoat-checkbox-label--left:before
+
+.topcoat-checkbox-label--right:after
+    
 .topcoat-checkbox-label--left,
 .topcoat-checkbox-label--right
     input-base()
     font-size: var-font-size
     line-height: var-line-height
     letter-spacing: var-letter-spacing
+    vertical-align: var-vertical-align
+
+.topcoat-not-checkbox
+    color: var-color;
+    padding: var-padding;
+    text-shadow: var-text-shadow;
+    background-color: var-background-color;
+    box-shadow: var-box-shadow;
+    border: var-border;
+    border-radius: var-border-radius;
