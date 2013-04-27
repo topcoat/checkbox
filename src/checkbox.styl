@@ -28,13 +28,13 @@ Base styles for checkboxes. The `<label>` needs to be placed after the `<input>`
     <input type="checkbox" id="example-checkbox-unchecked" class="topcoat-checkbox">
     <label for="example-checkbox-unchecked" class="topcoat-checkbox-label topcoat-checkbox-label--left">Extremely Long Label</label>
     
-    <input type="checkbox" id="example-checkbox-disabled" class="topcoat-checkbox is-disabled">
+    <input type="checkbox" id="example-checkbox-disabled" class="topcoat-checkbox is-disabled" disabled>
     <label for="example-checkbox-disabled" class="topcoat-checkbox-label topcoat-checkbox-label--left">Extremely Long Label</label>
     
 */
 
 input[type="checkbox"]
-    //display: none
+    display: none
 
 .topcoat-checkbox-label--left:before,
 .topcoat-checkbox-label--right:after
@@ -54,14 +54,15 @@ input[type="checkbox"]:disabled + label
     content: " "
     display: inline-block
     position: relative
-    top: -6px
+    top: 0px
     width: 35px
-    height: 31px
-    background-position: left -37px
+    height: 35px
+    background-position: left 0px
     background-repeat: no-repeat
-    background-size: 37px
+    background-size: 35px
     display: inline-block
     margin: 5px 0
+    border: 1px solid red
     cursor: pointer
     user-select: none
     -webkit-touch-callout: none
