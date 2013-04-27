@@ -1,0 +1,10 @@
+- var repeats = 200
+doctype 5
+html
+    head
+        title TopCoat input base test
+        link(rel='stylesheet', type='text/css', href='../../release/css/input-min.css')
+    body
+        - while (repeats > 0)
+            - var repeats = repeats - 1
+            input.input
