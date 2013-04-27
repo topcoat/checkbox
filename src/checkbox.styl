@@ -4,7 +4,7 @@
  Checkbox
  --------
  
-Base styles for checkboxes. The `<label>` needs to be placed after the `<input>` element in the HTML. If you are using `.topcoat-checkbox--right`, make sure to set the width, so all the labels are the same width and the controls line up vertically.
+Base styles for checkboxes. The `<label>` needs to be placed after the `<input>` element in the HTML. If you are using `.topcoat-checkbox-label--right`, make sure to set the width, so all the labels are the same width and the controls line up vertically.
 
 
  :focus - Focus state
@@ -17,9 +17,9 @@ Base styles for checkboxes. The `<label>` needs to be placed after the `<input>`
 
  .topcoat-checkbox
 
- .topcoat-checkbox--left - use if you want the control to appear before (to the left of) the label
+ .topcoat-checkbox-label--left - use if you want the control to appear before (to the left of) the label
 
- .topcoat-checkbox--right - use if you want the control to appear after (to the right of) the label
+ .topcoat-checkbox-label--right - use if you want the control to appear after (to the right of) the label
 
     
     <input type="checkbox" id="example-checkbox-checked" class="topcoat-checkbox" checked="checked">
@@ -33,42 +33,12 @@ Base styles for checkboxes. The `<label>` needs to be placed after the `<input>`
     
 */
 
-
-input[type="checkbox"],
-input[type="radio"]
-    // display: none
-
-.topcoat-checkbox--left:before,
-.topcoat-checkbox--right:after
-    content: " "
-    display: inline-block
-    position: relative
-    top: -6px
-    width: 35px
-    height: 31px
-    background-position: left -37px
-    background-repeat: no-repeat
-    background-size: 37px
-
-.topcoat-checkbox--left:before
-    float: left
-    margin-right: 15px
-
-.topcoat-checkbox--right:after
-    float: right
+input[type="checkbox"]
+    display: none
 
 .topcoat-checkbox:before,
 .topcoat-checkbox:after
     background-image: var-checkbox-unchecked
-    
-.topcoat-checkbox--left,
-.topcoat-checkbox--right,
-    display: inline-block
-    margin: 5px 0
-    cursor: pointer
-    user-select: none
-    -webkit-touch-callout: none
-    -webkit-user-select: none
 
 input[type="checkbox"]:checked + .topcoat-checkbox--left:before,
 input[type="checkbox"]:checked + .topcoat-checkbox--right:after
@@ -78,6 +48,31 @@ input[type="checkbox"]:disabled + label
     opacity: 0.3
     cursor: default
     pointer-events: none
+
+.topcoat-checkbox-label--left:before,
+.topcoat-checkbox-label--right:after
+    content: " "
+    display: inline-block
+    position: relative
+    top: -6px
+    width: 35px
+    height: 31px
+    background-position: left -37px
+    background-repeat: no-repeat
+    background-size: 37px
+    display: inline-block
+    margin: 5px 0
+    cursor: pointer
+    user-select: none
+    -webkit-touch-callout: none
+    -webkit-user-select: none
+
+.topcoat-checkbox-label--left:before
+    float: left
+    margin-right: 15px
+
+.topcoat-checkbox-label--right:after
+    float: right
 
 .topcoat-not-checkbox
     input-base()
