@@ -34,10 +34,10 @@ Base styles for checkboxes. The `<label>` needs to be placed after the `<input>`
 */
 
 input[type="checkbox"]
-    display: none
+    //display: none
 
-.topcoat-checkbox:before,
-.topcoat-checkbox:after
+.topcoat-checkbox--left:before,
+.topcoat-checkbox--right:after
     background-image: var-checkbox-unchecked
 
 input[type="checkbox"]:checked + .topcoat-checkbox--left:before,
@@ -57,7 +57,7 @@ input[type="checkbox"]:disabled + label
     top: -6px
     width: 35px
     height: 31px
-    background-position: left -37px
+    /*background-position: left -37px*/
     background-repeat: no-repeat
     background-size: 37px
     display: inline-block
