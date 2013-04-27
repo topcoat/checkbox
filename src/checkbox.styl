@@ -6,20 +6,14 @@
  
 Base styles for checkboxes. The `<label>` needs to be placed after the `<input>` element in the HTML. If you are using `.topcoat-checkbox-label--right`, make sure to set the width, so all the labels are the same width and the controls line up vertically.
 
-
- :focus - Focus state
-
- .is-focused - Simulates an focus state on mobile devices
-
- :disabled - Disabled state
-
- .is-disabled - Simulates a disabled state on mobile devices
-
- .topcoat-checkbox
-
- .topcoat-checkbox-label--left - use if you want the control to appear before (to the left of) the label
-
- .topcoat-checkbox-label--right - use if you want the control to appear after (to the right of) the label
+- `:focus` Focus state
+- `.is-focused` Simulates an focus state on mobile devices
+- `:disabled` Disabled state
+- `.is-disabled` Simulates a disabled state on mobile devices
+- `.topcoat-checkbox`
+- `.topcoat-checkbox-label`
+- `.topcoat-checkbox-label--left` Position the control to the left of the label
+- `.topcoat-checkbox-label--right` Position the control to the right of the label
 
     
     <input type="checkbox" id="example-checkbox-checked" class="topcoat-checkbox" checked="checked">
@@ -31,6 +25,7 @@ Base styles for checkboxes. The `<label>` needs to be placed after the `<input>`
     <input type="checkbox" id="example-checkbox-disabled" class="topcoat-checkbox is-disabled" disabled>
     <label for="example-checkbox-disabled" class="topcoat-checkbox-label topcoat-checkbox-label--left">Extremely Long Label</label>
     
+
 */
 
 input[type="checkbox"]
