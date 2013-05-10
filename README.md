@@ -1,4 +1,4 @@
 checkbox
 ========
 
-TopCoat checkbox
+Topcoat checkbox
