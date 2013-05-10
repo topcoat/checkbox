@@ -1,47 +1,93 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
+
     // Project configuration.
     grunt.initConfig({
-        // Task configuration.
+        pkg: grunt.file.readJSON('package.json'),
         gruntfile: {
             src: 'Gruntfile.js'
         },
-        stylus: {
-            compile: {
+
+        topcoat: {
+            download: {
                 options: {
-                    paths: ['src/mixins'],
-                    compress: false
-                },
-                files: {
-                    'release/checkbox.css': ['src/copyright.styl', 'src/checkbox.styl']
-                }
-            },
-            minify: {
-                options: {
-                    paths: ['src/mixins'],
-                    compress: true
-                },
-                files: {
-                    'release/checkbox-min.css': ['src/copyright.styl', 'src/checkbox.styl']
+                    srcPath: 'tmp/src/',
+                    repos: '<%= pkg.topcoat %>'
                 }
             }
         },
+
+        unzip: {
+            controls: {
+                src: 'tmp/src/controls/*.zip',
+                dest: 'tmp/src/controls'
+            },
+            utils: {
+                src: 'tmp/src/utils/*.zip',
+                dest: 'tmp/src/utils'
+            }
+        },
+
+        clean: {
+            tmp: ['tmp'],
+            zip: ['tmp/src/*.zip', 'tmp/src/controls/*.zip', 'tmp/src/skins/*.zip', 'tmp/src/utils/*.zip']
+        },
+
+        compile: {
+            stylus: {
+                options: {
+                    import: ['utils', 'variables'],
+                    compress: false
+                },
+                files: {
+                    'release/css/checkbox.css': ['src/copyright.styl', 'src/checkbox.styl']
+                }
+            }
+        },
+
+        cssmin: {
+            minify: {
+                expand: true,
+                cwd: 'release/css/',
+                src: ['*.css', '!*.min.css'],
+                dest: 'release/css/',
+                ext: '.min.css'
+            }
+        },
+
+        jade: {
+            compile: {
+                expand: true,
+                cwd: 'test/perf',
+                src: ['*.jade'],
+                dest: 'test/perf/',
+                ext: '.test.html'
+            }
+        },
         nodeunit: {
-            tests: ['test/*_test.js']
+            tests: ['test/*.test.js']
         },
         watch: {
             files: 'src/*.styl',
-            tasks: ['default']
+            tasks: ['build']
         }
     });
 
     // These plugins provide necessary tasks.
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-stylus');
+    grunt.loadNpmTasks('grunt-contrib-jade');
     grunt.loadNpmTasks('grunt-contrib-nodeunit');
+    grunt.loadNpmTasks('grunt-topcoat');
+    grunt.loadNpmTasks('grunt-zip');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+
+    grunt.loadTasks('tasks');
 
     // Default task.
-    grunt.registerTask('default', ['stylus:compile', 'stylus:minify', 'nodeunit']);
+    grunt.registerTask('default', ['topcoat', 'build']);
+    grunt.registerTask('build', ['compile', 'cssmin', 'jade', 'nodeunit']);
 
 };
