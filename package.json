@@ -1,7 +1,7 @@
 {
   "name": "checkbox",
   "version": "0.2.0",
-  "description": "TopCoat checkbox",
+  "description": "Topcoat checkbox",
   "main": "checkbox.css",
   "topcoat": {
     "controls": {
@@ -38,7 +38,7 @@
     "grunt-contrib-clean": "~0.4.1",
     "grunt-zip": "~0.7.0",
     "grunt-contrib-cssmin": "~0.6.0",
-    "grunt-topcoat": "0.0.5",
+    "grunt-topcoat": "*",
     "grunt-contrib-jade": "~0.5.0",
     "debug": "~0.7.2"
   }
