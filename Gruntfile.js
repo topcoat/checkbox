@@ -1,58 +1,68 @@
-/*global module:false*/
-module.exports = function(grunt) {
+/**
+*
+* Copyright 2012 Adobe Systems Inc.;
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
 
+/*global module:false*/
+
+module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-        gruntfile: {
-            src: 'Gruntfile.js'
-        },
-
-        topcoat: {
-            download: {
-                options: {
-                    srcPath: 'tmp/src/',
-                    repos: '<%= pkg.topcoat %>'
-                }
-            }
-        },
-
-        unzip: {
-            controls: {
-                src: 'tmp/src/controls/*.zip',
-                dest: 'tmp/src/controls'
-            },
-            utils: {
-                src: 'tmp/src/utils/*.zip',
-                dest: 'tmp/src/utils'
-            }
-        },
 
         clean: {
-            tmp: ['tmp'],
-            zip: ['tmp/src/*.zip', 'tmp/src/controls/*.zip', 'tmp/src/skins/*.zip', 'tmp/src/utils/*.zip']
+            release: ['css'],
         },
 
-        compile: {
-            stylus: {
+        stylus: {
+            compile: {
                 options: {
-                    import: ['utils', 'variables'],
+                    paths: ['node_modules/topcoat-checkbox-base/src/mixins', 'node_modules/topcoat-utils/src/mixins', 'node_modules/topcoat-theme/src'],
+                    import: ['utils', 'theme-topcoat-mobile-light'],
                     compress: false
                 },
-                files: {
-                    'release/css/checkbox.css': ['src/copyright.styl', 'src/checkbox.styl']
-                }
+
+                files: [{
+                    src: 'src/topcoat-checkbox.styl',
+                    dest: 'css/topcoat-checkbox.css'
+                }]
+            }
+        },
+
+        copy: {
+            release: {
+                files: [{
+                    expand: true,
+                    flatten: true,
+                    src: 'node_modules/topcoat-theme/img/light-sprites2x.png',
+                    dest: 'img'
+                }]
             }
         },
 
         cssmin: {
             minify: {
                 expand: true,
-                cwd: 'release/css/',
+                cwd: 'css',
                 src: ['*.css', '!*.min.css'],
-                dest: 'release/css/',
-                ext: '.min.css'
+                dest: 'css',
+                ext: '.min.css',
+                options: {
+                    banner: grunt.file.read('src/copyright.styl').toString()
+                }
             }
         },
 
@@ -65,12 +75,19 @@ module.exports = function(grunt) {
                 ext: '.test.html'
             }
         },
-        nodeunit: {
-            tests: ['test/*.test.js']
+
+        simplemocha: {
+            options: {
+                ui: 'bdd'
+            },
+            all: {
+                src: ['test/*.test.js']
+            }
         },
+
         watch: {
-            files: 'src/*.styl',
-            tasks: ['build']
+            files: 'src/**/*.styl',
+            tasks: ['build', 'test']
         }
     });
 
@@ -78,17 +95,16 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-contrib-jade');
-    grunt.loadNpmTasks('grunt-contrib-nodeunit');
-    grunt.loadNpmTasks('grunt-topcoat');
-    grunt.loadNpmTasks('grunt-zip');
+    grunt.loadNpmTasks('grunt-simple-mocha');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-
-    grunt.loadTasks('tasks');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Default task.
-    grunt.registerTask('default', ['clean', 'topcoat', 'build']);
-    grunt.registerTask('build', ['compile', 'cssmin', 'jade', 'nodeunit', 'clean']);
-    grunt.registerTask('test', ['nodeunit']);
+    grunt.registerTask('default', ['clean', 'build', 'test', 'release']);
+    grunt.registerTask('build', ['stylus', 'jade']);
+    grunt.registerTask('test', ['simplemocha']);
+    grunt.registerTask('release', ['cssmin', 'copy']);
 
 };
+
