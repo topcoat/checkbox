@@ -104,12 +104,12 @@ input[type="checkbox"]:checked + label:after
   @extend .checkbox__label:before
   width var-width--checkbox__background
   height var-height--checkbox__background
-  top 3px /* Fudge needed to extend the checkmark tail :/ */
-  background var-background-color /* #e5e9e9 */
-  border var-border--checkbox__background
+  top 3px /* Fudge needed to extend the checkmark tail */
+  background var-background-color
+  border var-border
   border-radius var-border-radius--checkbox__background
   cursor pointer
-  box-shadow var-box-shadow /* inset 0 1px #fff */
+  box-shadow var-box-shadow
 
 .topcoat-checkbox__label--right:before
     left 0
@@ -123,6 +123,7 @@ input[type="checkbox"]:checked + label:after
   padding-right var-width--checkbox__background
   line-height var-height--checkbox
   font-weight var-font-weight
+  color var-color
   @extend .checkbox__label
 
 .topcoat-checkbox__label--left

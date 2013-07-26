@@ -35,7 +35,8 @@
     "grunt-contrib-copy": "~0.4.1"
   },
   "dependencies": {
-    "topcoat-theme": "~0.4.1",
-    "topcoat-utils": "~0.1.1"
+    "topcoat-utils": "~0.1.1",
+    "topcoat-checkbox-base": "~0.1.0",
+    "topcoat-theme": "~0.5.0"
   }
 }
