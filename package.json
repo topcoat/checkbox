@@ -1,6 +1,6 @@
 {
   "name": "topcoat-checkbox",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Default styling for Topcoat checkbox",
   "main": "index.html",
   "directories": {
