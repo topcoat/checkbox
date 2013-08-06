@@ -1,39 +1,47 @@
 input[type="checkbox"] {
-  display: none;
-}
-input[type="checkbox"]:disabled + label {
-  opacity: 0.3;
-  cursor: default;
-  pointer-events: none;
+  position: absolute;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  opacity: 0.001;
+  z-index: 1;
+  vertical-align: top;
+  outline: none;
 }
 .checkbox,
 .topcoat-checkbox {
+  box-sizing: border-box;
+  background-clip: padding-box;
   position: relative;
   display: inline-block;
   vertical-align: top;
-}
-.checkbox__label,
-.topcoat-checkbox__label,
-.topcoat-checkbox__label--left,
-.topcoat-checkbox__label--right {
   cursor: default;
   user-select: none;
 }
-.checkbox__label:before,
-.checkbox__label:after,
-.topcoat-checkbox__label:before,
-.topcoat-checkbox__label--right:before,
-.topcoat-checkbox__label--left:before,
-.topcoat-checkbox__label:after,
-.topcoat-checkbox__label--left:after,
-.topcoat-checkbox__label--right:after {
+.checkbox__label,
+.topcoat-checkbox__label {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  cursor: default;
+  user-select: none;
+}
+.checkbox:before,
+.checkbox:after,
+.topcoat-checkbox:before,
+.topcoat-checkbox:after {
   content: '';
   position: absolute;
+}
+.checkbox:before,
+.topcoat-checkbox:before {
+  box-sizing: border-box;
+  background-clip: padding-box;
 }
 body {
   margin: 0;
   padding: 0;
-  background: #3a3f42 url("../img/bg_dark.png") repeat-x;
+  background: #dfe2e2;
   color: #000;
   font: 16px "Source Sans", helvetica, arial, sans-serif;
   font-weight: 200;
@@ -71,169 +79,137 @@ body {
 *
 */
 input[type="checkbox"] {
-  display: none;
-}
-input[type="checkbox"]:disabled + label {
-  opacity: 0.3;
-  cursor: default;
-  pointer-events: none;
+  position: absolute;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  opacity: 0.001;
+  z-index: 1;
+  vertical-align: top;
+  outline: none;
 }
 .checkbox,
 .topcoat-checkbox {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
   position: relative;
   display: inline-block;
   vertical-align: top;
-}
-.checkbox__label,
-.topcoat-checkbox__label,
-.topcoat-checkbox__label--left,
-.topcoat-checkbox__label--right {
   cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
-.checkbox__label:before,
-.checkbox__label:after,
-.topcoat-checkbox__label:before,
-.topcoat-checkbox__label--right:before,
-.topcoat-checkbox__label--left:before,
-.topcoat-checkbox__label:after,
-.topcoat-checkbox__label--left:after,
-.topcoat-checkbox__label--right:after {
+.checkbox__label,
+.topcoat-checkbox__label {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.checkbox:before,
+.checkbox:after,
+.topcoat-checkbox:before,
+.topcoat-checkbox:after {
   content: '';
   position: absolute;
 }
-/* topdoc
+.checkbox:before,
+.topcoat-checkbox:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+/*
 
-  name:
-    Checkbox
+  Checkbox
+  --------
 
-  description:
     Default  styles for Topcoat checkboxes.
-    The `<label>` needs to be placed after the `<input>` element in the HTML.
 
     .topcoat-checkbox
-    .topcoat-checkbox__label--left Position the control to the left of the label
-    .topcoat-checkbox__label--right Position the control to the right of the label
 
-  modifiers:
     :focus - Focus state
     .is-focused - Simulates an focus state on mobile devices
     :disabled - Disabled state
     .is-disabled - Simulates a disabled state on mobile devices
 
+    <!-- NO LABEL -->
+    <label class="topcoat-checkbox__label">
+        <input type="checkbox">
+        <div class="topcoat-checkbox"></div>
+    </label>
 
-  examples:
+    <!-- LEFT -->
+    <label class="topcoat-checkbox__label">
+        Label on the left
+        <input type="checkbox">
+        <div class="topcoat-checkbox"></div>
+    </label>
 
-    <!-- No label -->
-
-    <div class="topcoat-checkbox">
-      <input type="checkbox" id="checkbox1">
-      <label for="checkbox1" class="topcoat-checkbox__label"></label>
-    </div>
-
-    <div class="topcoat-checkbox">
-      <input type="checkbox" id="checkbox2" checked="checked">
-      <label for="checkbox2" class="topcoat-checkbox__label"></label>
-    </div>
-
-    <div class="topcoat-checkbox is-disabled">
-      <input type="checkbox" id="checkbox3">
-      <label for="checkbox3" class="topcoat-checkbox__label"></label>
-    </div>
-
-    <!-- Label on right side -->
-
-    <div class="topcoat-checkbox">
-      <input type="checkbox" id="checkbox4">
-      <label for="checkbox4" class="topcoat-checkbox__label--right">Label on the right</label>
-    </div>
-
-    <div class="topcoat-checkbox">
-      <input type="checkbox" id="checkbox5" checked="checked">
-      <label for="checkbox5" class="topcoat-checkbox__label--right">Label on the right</label>
-    </div>
-
-    <div class="topcoat-checkbox is-disabled">
-      <input type="checkbox" id="checkbox6">
-      <label for="checkbox6" class="topcoat-checkbox__label--right">Label on the right</label>
-    </div>
-
-    <!-- Label on left side -->
-
-    <div class="topcoat-checkbox">
-      <input type="checkbox" id="checkbox7">
-      <label for="checkbox7" class="topcoat-checkbox__label--left">Label on the left</label>
-    </div>
-
-    <div class="topcoat-checkbox">
-      <input type="checkbox" id="checkbox8" checked="checked">
-      <label for="checkbox8" class="topcoat-checkbox__label--left">Label on the left</label>
-    </div>
-
-    <div class="topcoat-checkbox is-disabled">
-      <input type="checkbox" id="checkbox9">
-      <label for="checkbox9" class="topcoat-checkbox__label--left">Label on the left</label>
-    </div>
+    <!-- RIGHT -->
+    <label class="topcoat-checkbox__label">
+        <input type="checkbox">
+        <div class="topcoat-checkbox"></div>
+        Label on the right
+    </label>
 */
 .topcoat-checkbox {
-  height: 2.5rem;
+  height: 2rem;
 }
-input[type="checkbox"]:checked + label:after {
+input[type="checkbox"] {
+  height: 2rem;
+  width: 2rem;
+  margin-top: 0;
+  margin-right: -2rem;
+  margin-bottom: -2rem;
+  margin-left: 0;
+}
+input[type="checkbox"]:checked + .topcoat-checkbox:after {
   opacity: 1;
 }
-.topcoat-checkbox__label:before,
-.topcoat-checkbox__label--right:before,
-.topcoat-checkbox__label--left:before {
+.topcoat-checkbox__label {
+  line-height: 2rem;
+}
+.topcoat-checkbox:before {
   width: 2rem;
   height: 2rem;
-  top: 3px;
-/* Fudge needed to extend the checkmark tail */
-  background: #595b5b;
-  border: 1px solid rgba(0,0,0,0.36);
+  background: #e5e9e8;
+  border: 1px solid #a5a8a8;
+  -webkit-border-radius: 3px;
   border-radius: 3px;
-  cursor: pointer;
-  box-shadow: inset 0 1px rgba(255,255,255,0.12);
+  -webkit-box-shadow: inset 0 1px #fff;
+  box-shadow: inset 0 1px #fff;
 }
-.topcoat-checkbox__label--right:before {
-  left: 0;
+.topcoat-checkbox {
+  width: 2rem;
+  height: 2rem;
 }
-.topcoat-checkbox__label--left:before {
-  right: 0;
-}
-.topcoat-checkbox__label,
-.topcoat-checkbox__label--left,
-.topcoat-checkbox__label--right {
-  padding-right: 2rem;
-  line-height: 2.5rem;
-  font-weight: 200;
-  color: #c6c8c8;
-}
-.topcoat-checkbox__label--left {
-  padding-right: 3rem;
-}
-.topcoat-checkbox__label--right {
-  padding-right: 0;
-  padding-left: 3rem;
-}
-.topcoat-checkbox__label:after,
-.topcoat-checkbox__label--left:after,
-.topcoat-checkbox__label--right:after {
+.topcoat-checkbox:after {
   opacity: 0;
   width: 28px;
   height: 11px;
-  top: 3px;
-/* Fudge to compensate for checkmark extending beyond bounds */
   background: transparent;
-  border: 7px solid #fff;
+  border: 7px solid #666;
   border-top: none;
   border-right: none;
+  -webkit-border-radius: 2px;
   border-radius: 2px;
-  transform: rotate(-50deg);
   -webkit-transform: rotate(-50deg);
-}
-.topcoat-checkbox__label--left:after {
-  right: -5px;
-}
-.topcoat-checkbox__label--right:after {
-  left: 2px;
+  -moz-transform: rotate(-50deg);
+  -o-transform: rotate(-50deg);
+  -ms-transform: rotate(-50deg);
+  transform: rotate(-50deg);
 }

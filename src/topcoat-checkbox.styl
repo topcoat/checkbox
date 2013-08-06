@@ -17,141 +17,83 @@
 */
 @import checkbox
 
-/* topdoc
+/*
 
-  name:
-    Checkbox
+  Checkbox
+  --------
 
-  description:
     Default  styles for Topcoat checkboxes.
-    The `<label>` needs to be placed after the `<input>` element in the HTML.
 
     .topcoat-checkbox
-    .topcoat-checkbox__label--left Position the control to the left of the label
-    .topcoat-checkbox__label--right Position the control to the right of the label
 
-  modifiers:
     :focus - Focus state
     .is-focused - Simulates an focus state on mobile devices
     :disabled - Disabled state
     .is-disabled - Simulates a disabled state on mobile devices
 
+    <!-- NO LABEL -->
+    <label class="topcoat-checkbox__label">
+        <input type="checkbox">
+        <div class="topcoat-checkbox"></div>
+    </label>
 
-  examples:
+    <!-- LEFT -->
+    <label class="topcoat-checkbox__label">
+        Label on the left
+        <input type="checkbox">
+        <div class="topcoat-checkbox"></div>
+    </label>
 
-    <!-- No label -->
-
-    <div class="topcoat-checkbox">
-      <input type="checkbox" id="checkbox1">
-      <label for="checkbox1" class="topcoat-checkbox__label"></label>
-    </div>
-
-    <div class="topcoat-checkbox">
-      <input type="checkbox" id="checkbox2" checked="checked">
-      <label for="checkbox2" class="topcoat-checkbox__label"></label>
-    </div>
-
-    <div class="topcoat-checkbox is-disabled">
-      <input type="checkbox" id="checkbox3">
-      <label for="checkbox3" class="topcoat-checkbox__label"></label>
-    </div>
-
-    <!-- Label on right side -->
-
-    <div class="topcoat-checkbox">
-      <input type="checkbox" id="checkbox4">
-      <label for="checkbox4" class="topcoat-checkbox__label--right">Label on the right</label>
-    </div>
-
-    <div class="topcoat-checkbox">
-      <input type="checkbox" id="checkbox5" checked="checked">
-      <label for="checkbox5" class="topcoat-checkbox__label--right">Label on the right</label>
-    </div>
-
-    <div class="topcoat-checkbox is-disabled">
-      <input type="checkbox" id="checkbox6">
-      <label for="checkbox6" class="topcoat-checkbox__label--right">Label on the right</label>
-    </div>
-
-    <!-- Label on left side -->
-
-    <div class="topcoat-checkbox">
-      <input type="checkbox" id="checkbox7">
-      <label for="checkbox7" class="topcoat-checkbox__label--left">Label on the left</label>
-    </div>
-
-    <div class="topcoat-checkbox">
-      <input type="checkbox" id="checkbox8" checked="checked">
-      <label for="checkbox8" class="topcoat-checkbox__label--left">Label on the left</label>
-    </div>
-
-    <div class="topcoat-checkbox is-disabled">
-      <input type="checkbox" id="checkbox9">
-      <label for="checkbox9" class="topcoat-checkbox__label--left">Label on the left</label>
-    </div>
+    <!-- RIGHT -->
+    <label class="topcoat-checkbox__label">
+        <input type="checkbox">
+        <div class="topcoat-checkbox"></div>
+        Label on the right
+    </label>
 */
 
 .topcoat-checkbox
   @extend .checkbox
-  height var-height--checkbox
+  height var-size--checkbox
 
-input[type="checkbox"]:checked + label:after
+input[type="checkbox"]
+  height var-size--checkbox
+  width var-size--checkbox
+  margin-top 0
+  margin-right -@width
+  margin-bottom -@height
+  margin-left 0
+
+input[type="checkbox"]:checked + .topcoat-checkbox:after
   opacity 1
 
-.topcoat-checkbox__label:before,
-.topcoat-checkbox__label--right:before,
-.topcoat-checkbox__label--left:before
-  @extend .checkbox__label:before
-  width var-width--checkbox__background
-  height var-height--checkbox__background
-  top 3px /* Fudge needed to extend the checkmark tail */
+.topcoat-checkbox__label
+  @extend .checkbox__label
+  line-height var-size--checkbox;
+
+.topcoat-checkbox:before
+  @extend .checkbox:before
+  width var-size--checkbox
+  height var-size--checkbox
   background var-background-color
   border var-border
-  border-radius var-border-radius--checkbox__background
-  cursor pointer
+  border-radius var-border-radius--checkbox
   box-shadow var-box-shadow
 
-.topcoat-checkbox__label--right:before
-    left 0
+.topcoat-checkbox
+  @extend .checkbox
+  width var-size--checkbox
+  height var-size--checkbox
 
-.topcoat-checkbox__label--left:before
-    right 0
-
-.topcoat-checkbox__label,
-.topcoat-checkbox__label--left,
-.topcoat-checkbox__label--right
-  padding-right var-width--checkbox__background
-  line-height var-height--checkbox
-  font-weight var-font-weight
-  color var-color
-  @extend .checkbox__label
-
-.topcoat-checkbox__label--left
-  padding-right var-padding--checkbox__label
-
-.topcoat-checkbox__label--right
-  padding-right 0
-  padding-left var-padding--checkbox__label
-
-.topcoat-checkbox__label:after,
-.topcoat-checkbox__label--left:after
-.topcoat-checkbox__label--right:after
-  @extend .checkbox__label:after
+.topcoat-checkbox:after
+  @extend .checkbox:after
   opacity 0
   width var-width--checkmark__tail
   height var-height--checkmark__foot
-  top 3px /* Fudge to compensate for checkmark extending beyond bounds */
   background transparent
   border var-border--checkmark
   border-top none
   border-right none
   border-radius var-border-radius--checkmark
   transform var-transform--checkmark
-  -webkit-transform var-transform--checkmark
-
-.topcoat-checkbox__label--left:after
-  right var-right--checkmark
-
-.topcoat-checkbox__label--right:after
-  left var-left--checkmark
 

@@ -32,7 +32,7 @@ module.exports = function(grunt) {
             compile: {
                 options: {
                     paths: ['node_modules/topcoat-utils/src/mixins', 'node_modules/topcoat-checkbox-base/src', 'node_modules/topcoat-theme/src', 'node_modules/topcoat-theme/src/includes'],
-                    import: ['utils', 'checkbox', 'theme-topcoat-mobile-dark', 'global', 'fonts'],
+                    import: ['checkbox', 'theme-topcoat-mobile-light', 'global', 'fonts', 'nib'],
                     compress: false
                 },
                 files: [{
