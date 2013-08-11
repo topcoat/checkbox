@@ -23,25 +23,75 @@ module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
 
         clean: {
             release: ['css'],
         },
 
         stylus: {
-            compile: {
+            mobilelight: {
                 options: {
-                    paths: ['node_modules/topcoat-utils/src/mixins', 'node_modules/topcoat-checkbox-base/src', 'node_modules/topcoat-theme/src', 'node_modules/topcoat-theme/src/includes'],
-                    import: ['checkbox', 'theme-topcoat-mobile-light', 'global', 'fonts', 'nib'],
+                    paths: ['node_modules/topcoat-checkbox-base/src', 'node_modules/topcoat-utils/src/mixins', 'node_modules/topcoat-theme/src'],
+                    import: ['theme-topcoat-mobile-light', 'nib'],
+                    compress: false
+                },
+
+                files: [{
+                    src: 'src/topcoat-checkbox.styl',
+                    dest: 'css/topcoat-checkbox-mobile-light.css'
+                }]
+            },
+
+            mobiledark: {
+                options: {
+                    paths: ['node_modules/topcoat-checkbox-base/src', 'node_modules/topcoat-utils/src/mixins', 'node_modules/topcoat-theme/src'],
+                    import: ['theme-topcoat-mobile-dark', 'nib'],
+                    compress: false
+                },
+
+                files: [{
+                    src: 'src/topcoat-checkbox.styl',
+                    dest: 'css/topcoat-checkbox-mobile-dark.css'
+                }]
+            },
+
+            desktoplight: {
+                options: {
+                    paths: ['node_modules/topcoat-checkbox-base/src', 'node_modules/topcoat-utils/src/mixins', 'node_modules/topcoat-theme/src'],
+                    import: ['theme-topcoat-desktop-light', 'nib'],
                     compress: false
                 },
                 files: [{
                     src: 'src/topcoat-checkbox.styl',
-                    dest: 'css/topcoat-checkbox.css'
+                    dest: 'css/topcoat-checkbox-desktop-light.css'
+                }]
+            },
+
+            desktopdark: {
+                options: {
+                    paths: ['node_modules/topcoat-checkbox-base/src', 'node_modules/topcoat-utils/src/mixins', 'node_modules/topcoat-theme/src'],
+                    import: ['theme-topcoat-desktop-dark', 'nib'],
+                    compress: false
+                },
+
+                files: [{
+                    src: 'src/topcoat-checkbox.styl',
+                    dest: 'css/topcoat-checkbox-desktop-dark.css'
                 }]
             }
         },
 
+        topdoc: {
+            usageguides: {
+                options: {
+                    source: 'css',
+                    destination: './',
+                    template: 'https://github.com/topcoat/usage-guide-theme',
+                    templateData: '<%= pkg.topdoc.templateData %>'
+                }
+            }
+        },
         cssmin: {
             minify: {
                 expand: true,
@@ -100,9 +150,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-topdoc');
 
-    grunt.registerTask('default', ['clean', 'build', 'test', 'release']);
+    grunt.registerTask('default', ['clean', 'build', 'release']);
     grunt.registerTask('build', ['stylus', 'jade']);
     grunt.registerTask('test', ['simplemocha']);
-    grunt.registerTask('release', ['cssmin','copy']);
+    grunt.registerTask('release', ['cssmin', 'copy', 'topdoc']);
 };
