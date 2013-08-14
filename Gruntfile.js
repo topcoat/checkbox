@@ -87,7 +87,7 @@ module.exports = function(grunt) {
                 options: {
                     source: 'css',
                     destination: './',
-                    template: 'https://github.com/topcoat/usage-guide-theme',
+                    template: '<%= pkg.topdoc.template %>',
                     templateData: '<%= pkg.topdoc.templateData %>'
                 }
             }
