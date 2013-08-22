@@ -16,53 +16,48 @@
 *
 */
 @import checkbox
-
-/*
- Checkbox
- --------
-
- :focus - Focus state
-
- .is-focused - Simulates an focus state on mobile devices
-
- :disabled - Disabled state
-
- .is-disabled - Simulates a disabled state on mobile devices
-
-     <label class="topcoat-checkbox__label">
-         <input type="checkbox">
-         <div class="topcoat-checkbox"></div>
-         Default
-     </label>
-
-     <br>
-     <br>
-
-     <label class="topcoat-checkbox__label is-active">
-         <input type="checkbox">
-         <div class="topcoat-checkbox"></div>
-         Active
-     </label>
-
-     <br>
-     <br>
-
-     <label class="topcoat-checkbox__label is-focused">
-         <input type="checkbox">
-         <div class="topcoat-checkbox"></div>
-         Focused
-     </label>
-
-     <br>
-     <br>
-
-     <label class="topcoat-checkbox__label is-disabled">
-         <input type="checkbox">
-         <div class="topcoat-checkbox"></div>
-         Disabled
-     </label>
+/* topdoc
+  name: Checkbox
+  description: Default skin for Topcoat checkbox
+  modifiers:
+    :focus - Focus state
+    .is-focused - Simulates an focus state on mobile devices
+    :disabled - Disabled state
+    .is-disabled - Simulates a disabled state on mobile devices
+  markup:
+    <label class="topcoat-checkbox__label">
+      <input type="checkbox">
+      <div class="topcoat-checkbox"></div>
+      Default
+    </label>
+    <br>
+    <br>
+    <label class="topcoat-checkbox__label is-active">
+      <input type="checkbox">
+      <div class="topcoat-checkbox"></div>
+      Active
+    </label>
+    <br>
+    <br>
+    <label class="topcoat-checkbox__label is-focused">
+      <input type="checkbox">
+      <div class="topcoat-checkbox"></div>
+      Focused
+    </label>
+    <br>
+    <br>
+    <label class="topcoat-checkbox__label is-disabled">
+      <input type="checkbox">
+      <div class="topcoat-checkbox"></div>
+      Disabled
+    </label>
+  example: http://codepen.io/Topcoat/pen/piHcs
+  tags:
+    - desktop
+    - light
+    - mobile
+    - checkbox
 */
-
 .topcoat-checkbox
   @extend .checkbox
   height var-size--checkbox

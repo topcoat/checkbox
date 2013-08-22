@@ -76,50 +76,47 @@ input[type="checkbox"] {
   -moz-background-clip: padding;
   background-clip: padding-box;
 }
-/*
- Checkbox
- --------
-
- :focus - Focus state
-
- .is-focused - Simulates an focus state on mobile devices
-
- :disabled - Disabled state
-
- .is-disabled - Simulates a disabled state on mobile devices
-
-     <label class="topcoat-checkbox__label">
-         <input type="checkbox">
-         <div class="topcoat-checkbox"></div>
-         Default
-     </label>
-
-     <br>
-     <br>
-
-     <label class="topcoat-checkbox__label is-active">
-         <input type="checkbox">
-         <div class="topcoat-checkbox"></div>
-         Active
-     </label>
-
-     <br>
-     <br>
-
-     <label class="topcoat-checkbox__label is-focused">
-         <input type="checkbox">
-         <div class="topcoat-checkbox"></div>
-         Focused
-     </label>
-
-     <br>
-     <br>
-
-     <label class="topcoat-checkbox__label is-disabled">
-         <input type="checkbox">
-         <div class="topcoat-checkbox"></div>
-         Disabled
-     </label>
+/* topdoc
+  name: Checkbox
+  description: Default skin for Topcoat checkbox
+  modifiers:
+    :focus - Focus state
+    .is-focused - Simulates an focus state on mobile devices
+    :disabled - Disabled state
+    .is-disabled - Simulates a disabled state on mobile devices
+  markup:
+    <label class="topcoat-checkbox__label">
+      <input type="checkbox">
+      <div class="topcoat-checkbox"></div>
+      Default
+    </label>
+    <br>
+    <br>
+    <label class="topcoat-checkbox__label is-active">
+      <input type="checkbox">
+      <div class="topcoat-checkbox"></div>
+      Active
+    </label>
+    <br>
+    <br>
+    <label class="topcoat-checkbox__label is-focused">
+      <input type="checkbox">
+      <div class="topcoat-checkbox"></div>
+      Focused
+    </label>
+    <br>
+    <br>
+    <label class="topcoat-checkbox__label is-disabled">
+      <input type="checkbox">
+      <div class="topcoat-checkbox"></div>
+      Disabled
+    </label>
+  example: http://codepen.io/Topcoat/pen/piHcs
+  tags:
+    - desktop
+    - light
+    - mobile
+    - checkbox
 */
 .topcoat-checkbox {
   height: 1rem;
@@ -154,12 +151,12 @@ input[type="checkbox"]:checked + .topcoat-checkbox:after,
   height: 1rem;
 }
 .topcoat-checkbox:after {
-  top: 3px;
+  top: 2px;
   opacity: 0;
-  width: 11px;
+  width: 14px;
   height: 4px;
   background: transparent;
-  border: 3px solid #666;
+  border: 7px solid #666;
   border-width: 3px;
   border-top: none;
   border-right: none;
