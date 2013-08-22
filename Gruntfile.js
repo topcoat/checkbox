@@ -156,7 +156,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-topdoc');
 
-    grunt.registerTask('default', ['clean', 'build', 'release']);
+    grunt.registerTask('default', ['clean', 'build', 'test','release']);
     grunt.registerTask('build', ['stylus', 'jade']);
     grunt.registerTask('test', ['simplemocha']);
     grunt.registerTask('release', ['cssmin', 'copy', 'topdoc']);
