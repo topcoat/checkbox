@@ -86,7 +86,7 @@ module.exports = function(grunt) {
             usageguides: {
                 options: {
                     source: 'css',
-                    destination: "test/component",
+                    destination: "demo",
                     template: "node_modules/topdoc-theme/",
                     templateData: {
                       "title": "Topcoat",
@@ -113,12 +113,6 @@ module.exports = function(grunt) {
                     flatten: true,
                     src: 'node_modules/topcoat-theme/img/light-sprites2x.png',
                     dest: 'img'
-                },
-                {
-                    expand: true,
-                    flatten: true,
-                    src: 'node_modules/topcoat-theme/font/**/*',
-                    dest: 'font'
                 }]
             }
         },

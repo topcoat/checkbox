@@ -21,9 +21,7 @@
   description: Default skin for Topcoat checkbox
   modifiers:
     :focus - Focus state
-    .is-focused - Simulates an focus state on mobile devices
     :disabled - Disabled state
-    .is-disabled - Simulates a disabled state on mobile devices
   markup:
     <label class="topcoat-checkbox__label">
       <input type="checkbox">
@@ -32,22 +30,8 @@
     </label>
     <br>
     <br>
-    <label class="topcoat-checkbox__label is-active">
-      <input type="checkbox">
-      <div class="topcoat-checkbox"></div>
-      Active
-    </label>
-    <br>
-    <br>
-    <label class="topcoat-checkbox__label is-focused">
-      <input type="checkbox">
-      <div class="topcoat-checkbox"></div>
-      Focused
-    </label>
-    <br>
-    <br>
-    <label class="topcoat-checkbox__label is-disabled">
-      <input type="checkbox">
+    <label class="topcoat-checkbox__label">
+      <input type="checkbox" disabled>
       <div class="topcoat-checkbox"></div>
       Disabled
     </label>
@@ -70,8 +54,7 @@ input[type="checkbox"]
   margin-bottom -@height
   margin-left 0
 
-input[type="checkbox"]:checked + .topcoat-checkbox:after,
-.topcoat-checkbox__label.is-active > .topcoat-checkbox:after
+input[type="checkbox"]:checked + .topcoat-checkbox:after
   opacity 1
 
 .topcoat-checkbox__label
@@ -106,12 +89,10 @@ input[type="checkbox"]:checked + .topcoat-checkbox:after,
   border-radius var-border-radius--checkmark
   transform var-transform--checkmark
 
-input[type="checkbox"]:focus + .topcoat-checkbox:before,
-.topcoat-checkbox__label.is-focused > .topcoat-checkbox:before
+input[type="checkbox"]:focus + .topcoat-checkbox:before
   border var-border--focus
   box-shadow var-box-shadow--focus
 
-.topcoat-checkbox__label:disabled,
-.topcoat-checkbox__label.is-disabled
+.topcoat-checkbox:disabled
   @extend .checkbox--disabled
 

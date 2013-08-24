@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Topcoat</title>
     <meta name="viewport" content="user-scalable=no,initial-scale = 1.0,maximum-scale = 1.0">
-    <link rel="stylesheet" type="text/css" href="css/topcoat-checkbox-desktop-light.css">
+    <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../css/topcoat-checkbox-desktop-light.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/brackets.css"><!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -17,9 +18,6 @@
           <nav class="site">
             <ul>
               <li><a href="http://topcoat.io">Home</a></li>
-              <li class="selected"><a href="http://topcoat.io/topcoat">Demo</a></li>
-              <li><a href="http://bench.topcoat.io/">Benchmarks</a></li>
-              <li><a href="http://topcoat.io/blog">Blog</a></li>
             </ul>
           </nav>
           <div class="combo">
@@ -41,15 +39,11 @@
         <header id="main-header">
           <div class="max-width">
             <hgroup>
-              <h1>Topcoat</h1>
+              <h1><a href="http://topcoat.io">Topcoat</a></h1>
               <p>CSS for clean and fast web apps</p>
             </hgroup>
             <nav>
               <ul>
-                <li class="selected"><a href="http://topcoat.io/topcoat">Demo</a></li>
-                <li><a href="http://bench.topcoat.io/">Benchmarks</a></li>
-                <li><a href="http://topcoat.io/blog">Blog</a></li>
-                <li><a id="download-btn" href="https://github.com/topcoat/topcoat/archive/v0.6.0.zip" onclick="_gaq.push(['_trackEvent', 'download', 'click',,, false]);">Download version 0.6.0</a></li>
               </ul>
             </nav><a id="slide-menu-button" class="topcoat-icon-button--large--quiet"><span class="topcoat-icon--large topcoat-icon--menu-stack"></span></a>
           </div>
@@ -59,75 +53,13 @@
             <header>
               <h2>Checkbox</h2>
             </header>
-            <section class="component"><label class="topcoat-checkbox__label">
- <input type="checkbox">
- <div class="topcoat-checkbox"></div>
- Default
- </label>
-
- <br>
- <br>
-
- <label class="topcoat-checkbox__label is-active">
- <input type="checkbox">
- <div class="topcoat-checkbox"></div>
- Active
- </label>
-
- <br>
- <br>
-
- <label class="topcoat-checkbox__label is-focused">
- <input type="checkbox">
- <div class="topcoat-checkbox"></div>
- Focused
- </label>
-
- <br>
- <br>
-
- <label class="topcoat-checkbox__label is-disabled">
- <input type="checkbox">
- <div class="topcoat-checkbox"></div>
- Disabled
- </label></section>
+            <section class="component"><label class="topcoat-checkbox__label">  <input type="checkbox">  <div class="topcoat-checkbox"></div>  Default</label><br><br><label class="topcoat-checkbox__label">  <input type="checkbox" disabled>  <div class="topcoat-checkbox"></div>  Disabled</label></section>
             <footer>
               <div class="showcode"><a href="#">Show code snippets</a></div>
               <section class="code">
                 <div>
                   <h3>HTML</h3>
-                  <pre class="html"><code data-language="html">&lt;label class=&quot;topcoat-checkbox__label&quot;&gt;
- &lt;input type=&quot;checkbox&quot;&gt;
- &lt;div class=&quot;topcoat-checkbox&quot;&gt;&lt;/div&gt;
- Default
- &lt;/label&gt;
-
- &lt;br&gt;
- &lt;br&gt;
-
- &lt;label class=&quot;topcoat-checkbox__label is-active&quot;&gt;
- &lt;input type=&quot;checkbox&quot;&gt;
- &lt;div class=&quot;topcoat-checkbox&quot;&gt;&lt;/div&gt;
- Active
- &lt;/label&gt;
-
- &lt;br&gt;
- &lt;br&gt;
-
- &lt;label class=&quot;topcoat-checkbox__label is-focused&quot;&gt;
- &lt;input type=&quot;checkbox&quot;&gt;
- &lt;div class=&quot;topcoat-checkbox&quot;&gt;&lt;/div&gt;
- Focused
- &lt;/label&gt;
-
- &lt;br&gt;
- &lt;br&gt;
-
- &lt;label class=&quot;topcoat-checkbox__label is-disabled&quot;&gt;
- &lt;input type=&quot;checkbox&quot;&gt;
- &lt;div class=&quot;topcoat-checkbox&quot;&gt;&lt;/div&gt;
- Disabled
- &lt;/label&gt;</code></pre>
+                  <pre class="html"><code data-language="html">&lt;label class=&quot;topcoat-checkbox__label&quot;&gt;  &lt;input type=&quot;checkbox&quot;&gt;  &lt;div class=&quot;topcoat-checkbox&quot;&gt;&lt;/div&gt;  Default&lt;/label&gt;&lt;br&gt;&lt;br&gt;&lt;label class=&quot;topcoat-checkbox__label&quot;&gt;  &lt;input type=&quot;checkbox&quot; disabled&gt;  &lt;div class=&quot;topcoat-checkbox&quot;&gt;&lt;/div&gt;  Disabled&lt;/label&gt;</code></pre>
                 </div>
                 <div>
                   <h3>CSS</h3>
@@ -142,8 +74,7 @@ input[type=&quot;checkbox&quot;] {
   margin-bottom: -1rem;
   margin-left: 0;
 }
-input[type=&quot;checkbox&quot;]:checked + .topcoat-checkbox:after,
-.topcoat-checkbox__label.is-active &gt; .topcoat-checkbox:after {
+input[type=&quot;checkbox&quot;]:checked + .topcoat-checkbox:after {
   opacity: 1;
 }
 .topcoat-checkbox__label {
@@ -181,8 +112,7 @@ input[type=&quot;checkbox&quot;]:checked + .topcoat-checkbox:after,
   -ms-transform: rotate(-50deg);
   transform: rotate(-50deg);
 }
-input[type=&quot;checkbox&quot;]:focus + .topcoat-checkbox:before,
-.topcoat-checkbox__label.is-focused &gt; .topcoat-checkbox:before {
+input[type=&quot;checkbox&quot;]:focus + .topcoat-checkbox:before {
   border: 1px solid #0940fd;
   -webkit-box-shadow: 0 0 0 2px #6fb5f1;
   box-shadow: 0 0 0 2px #6fb5f1;
@@ -196,7 +126,7 @@ input[type=&quot;checkbox&quot;]:focus + .topcoat-checkbox:before,
         <footer></footer>
       </div>
     </div>
-    <script src="//use.edgefonts.net/source-sans-pro:n3,n4,n6;source-code-pro:n3.js"></script>
+    <script src="//use.edgefonts.net/source-sans-pro:n3,n4,n6;source-code-pro:n4.js"></script>
     <script src="js/rainbow-custom.min.js"></script>
     <script src="js/main.js"></script>
   </body>

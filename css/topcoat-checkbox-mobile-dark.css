@@ -54,8 +54,7 @@ input[type="checkbox"] {
   user-select: none;
 }
 .checkbox--disabled,
-.topcoat-checkbox__label:disabled,
-.topcoat-checkbox__label.is-disabled {
+.topcoat-checkbox:disabled {
   opacity: 0.3;
   cursor: default;
   pointer-events: none;
@@ -81,9 +80,7 @@ input[type="checkbox"] {
   description: Default skin for Topcoat checkbox
   modifiers:
     :focus - Focus state
-    .is-focused - Simulates an focus state on mobile devices
     :disabled - Disabled state
-    .is-disabled - Simulates a disabled state on mobile devices
   markup:
     <label class="topcoat-checkbox__label">
       <input type="checkbox">
@@ -92,22 +89,8 @@ input[type="checkbox"] {
     </label>
     <br>
     <br>
-    <label class="topcoat-checkbox__label is-active">
-      <input type="checkbox">
-      <div class="topcoat-checkbox"></div>
-      Active
-    </label>
-    <br>
-    <br>
-    <label class="topcoat-checkbox__label is-focused">
-      <input type="checkbox">
-      <div class="topcoat-checkbox"></div>
-      Focused
-    </label>
-    <br>
-    <br>
-    <label class="topcoat-checkbox__label is-disabled">
-      <input type="checkbox">
+    <label class="topcoat-checkbox__label">
+      <input type="checkbox" disabled>
       <div class="topcoat-checkbox"></div>
       Disabled
     </label>
@@ -129,8 +112,7 @@ input[type="checkbox"] {
   margin-bottom: -2rem;
   margin-left: 0;
 }
-input[type="checkbox"]:checked + .topcoat-checkbox:after,
-.topcoat-checkbox__label.is-active > .topcoat-checkbox:after {
+input[type="checkbox"]:checked + .topcoat-checkbox:after {
   opacity: 1;
 }
 .topcoat-checkbox__label {
@@ -151,7 +133,7 @@ input[type="checkbox"]:checked + .topcoat-checkbox:after,
   height: 2rem;
 }
 .topcoat-checkbox:after {
-  top: 1px;
+  top: 0;
   opacity: 0;
   width: 28px;
   height: 11px;
@@ -168,8 +150,7 @@ input[type="checkbox"]:checked + .topcoat-checkbox:after,
   -ms-transform: rotate(-50deg);
   transform: rotate(-50deg);
 }
-input[type="checkbox"]:focus + .topcoat-checkbox:before,
-.topcoat-checkbox__label.is-focused > .topcoat-checkbox:before {
+input[type="checkbox"]:focus + .topcoat-checkbox:before {
   border: 1px solid #0940fd;
   -webkit-box-shadow: 0 0 0 2px #6fb5f1;
   box-shadow: 0 0 0 2px #6fb5f1;
