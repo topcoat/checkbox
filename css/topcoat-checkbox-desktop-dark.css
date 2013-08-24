@@ -133,9 +133,9 @@ input[type="checkbox"]:checked + .topcoat-checkbox:after {
   height: 1rem;
 }
 .topcoat-checkbox:after {
-  top: 3px;
+  top: 2px;
   opacity: 0;
-  width: 11px;
+  width: 14px;
   height: 4px;
   background: transparent;
   border: 7px solid #fff;
