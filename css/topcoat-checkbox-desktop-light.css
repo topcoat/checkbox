@@ -79,8 +79,8 @@ input[type="checkbox"] {
   name: Checkbox
   description: Default skin for Topcoat checkbox
   modifiers:
-    :focus - Focus state
-    :disabled - Disabled state
+    :focus: Focus state
+    :disabled: Disabled state
   markup:
     <label class="topcoat-checkbox__label">
       <input type="checkbox">
