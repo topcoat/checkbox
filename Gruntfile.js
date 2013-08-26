@@ -86,9 +86,13 @@ module.exports = function(grunt) {
             usageguides: {
                 options: {
                     source: 'css',
-                    destination: './',
-                    template: '<%= pkg.topdoc.template %>',
-                    templateData: '<%= pkg.topdoc.templateData %>'
+                    destination: "demo",
+                    template: "node_modules/topdoc-theme/",
+                    templateData: {
+                      "title": "Topcoat",
+                      "subtitle": "CSS for clean and fast web apps",
+                      "homeURL": "http://topcoat.io"
+                    }
                 }
             }
         },
@@ -109,12 +113,6 @@ module.exports = function(grunt) {
                     flatten: true,
                     src: 'node_modules/topcoat-theme/img/light-sprites2x.png',
                     dest: 'img'
-                },
-                {
-                    expand: true,
-                    flatten: true,
-                    src: 'node_modules/topcoat-theme/font/**/*',
-                    dest: 'font'
                 }]
             }
         },
@@ -152,7 +150,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-topdoc');
 
-    grunt.registerTask('default', ['clean', 'build', 'release']);
+    grunt.registerTask('default', ['clean', 'build', 'test','release']);
     grunt.registerTask('build', ['stylus', 'jade']);
     grunt.registerTask('test', ['simplemocha']);
     grunt.registerTask('release', ['cssmin', 'copy', 'topdoc']);
