@@ -26,6 +26,7 @@ input[type="checkbox"] {
   outline: none;
 }
 .checkbox,
+.topcoat-checkbox,
 .topcoat-checkbox {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -134,8 +135,9 @@ input[type="checkbox"]:checked + .topcoat-checkbox:after {
 }
 .topcoat-checkbox:after {
   top: 2px;
+  left: 2px;
   opacity: 0;
-  width: 14px;
+  width: 12px;
   height: 4px;
   background: transparent;
   border: 7px solid #666;
