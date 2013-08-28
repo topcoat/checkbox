@@ -3,32 +3,6 @@
   "version": "0.3.5",
   "description": "Default styling for Topcoat checkbox",
   "main": "index.html",
-  "topdoc": {
-    "template": "https://github.com/topcoat/topdoc-theme",
-    "templateData": {
-      "title": "Topcoat",
-      "subtitle": "CSS for clean and fast web apps",
-      "download": {
-        "url": "https://github.com/topcoat/topcoat/archive/v0.6.0.zip",
-        "label": "Download version 0.6.0"
-      },
-      "homeURL": "http://topcoat.io",
-      "siteNav": [
-        {
-          "url": "http://topcoat.io/topcoat",
-          "text": "Demo"
-        },
-        {
-          "url": "http://bench.topcoat.io/",
-          "text": "Benchmarks"
-        },
-        {
-          "url": "http://topcoat.io/blog",
-          "text": "Blog"
-        }
-      ]
-    }
-  },
   "directories": {
     "test": "test",
     "lib": "src",
