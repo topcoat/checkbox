@@ -53,17 +53,23 @@
             <header>
               <h2>Checkbox</h2>
             </header>
-            <section class="component"><label class="topcoat-checkbox__label">  <input type="checkbox">  <div class="topcoat-checkbox"></div>  Default</label><br><br><label class="topcoat-checkbox__label">  <input type="checkbox" disabled>  <div class="topcoat-checkbox"></div>  Disabled</label></section>
+            <section class="component"><label class="topcoat-checkbox">  <input type="checkbox">  <div class="topcoat-checkbox__checkmark"></div>  Default</label><br><br><label class="topcoat-checkbox">  <input type="checkbox" disabled>  <div class="topcoat-checkbox__checkmark"></div>  Disabled</label></section>
+            <section class="examples">
+              <h4>Examples</h4>
+              <ul>
+                <li><a href="http://codepen.io/Topcoat/pen/piHcs">mobile checkbox</a></li>
+              </ul>
+            </section>
             <footer>
               <div class="showcode"><a href="#">Show code snippets</a></div>
               <section class="code">
                 <div>
                   <h3>HTML</h3>
-                  <pre class="html"><code data-language="html">&lt;label class=&quot;topcoat-checkbox__label&quot;&gt;  &lt;input type=&quot;checkbox&quot;&gt;  &lt;div class=&quot;topcoat-checkbox&quot;&gt;&lt;/div&gt;  Default&lt;/label&gt;&lt;br&gt;&lt;br&gt;&lt;label class=&quot;topcoat-checkbox__label&quot;&gt;  &lt;input type=&quot;checkbox&quot; disabled&gt;  &lt;div class=&quot;topcoat-checkbox&quot;&gt;&lt;/div&gt;  Disabled&lt;/label&gt;</code></pre>
+                  <pre class="html"><code data-language="html">&lt;label class=&quot;topcoat-checkbox&quot;&gt;  &lt;input type=&quot;checkbox&quot;&gt;  &lt;div class=&quot;topcoat-checkbox__checkmark&quot;&gt;&lt;/div&gt;  Default&lt;/label&gt;&lt;br&gt;&lt;br&gt;&lt;label class=&quot;topcoat-checkbox&quot;&gt;  &lt;input type=&quot;checkbox&quot; disabled&gt;  &lt;div class=&quot;topcoat-checkbox__checkmark&quot;&gt;&lt;/div&gt;  Disabled&lt;/label&gt;</code></pre>
                 </div>
                 <div>
                   <h3>CSS</h3>
-                  <pre class="css"><code data-language="css">.topcoat-checkbox {
+                  <pre class="css"><code data-language="css">.topcoat-checkbox__checkmark {
   height: 1rem;
 }
 input[type=&quot;checkbox&quot;] {
@@ -74,13 +80,13 @@ input[type=&quot;checkbox&quot;] {
   margin-bottom: -1rem;
   margin-left: 0;
 }
-input[type=&quot;checkbox&quot;]:checked + .topcoat-checkbox:after {
+input[type=&quot;checkbox&quot;]:checked + .topcoat-checkbox__checkmark:after {
   opacity: 1;
 }
-.topcoat-checkbox__label {
+.topcoat-checkbox {
   line-height: 1rem;
 }
-.topcoat-checkbox:before {
+.topcoat-checkbox__checkmark:before {
   width: 1rem;
   height: 1rem;
   background: #595b5b;
@@ -90,15 +96,15 @@ input[type=&quot;checkbox&quot;]:checked + .topcoat-checkbox:after {
   -webkit-box-shadow: inset 0 1px #727373;
   box-shadow: inset 0 1px #727373;
 }
-.topcoat-checkbox {
+.topcoat-checkbox__checkmark {
   width: 1rem;
   height: 1rem;
 }
-.topcoat-checkbox:after {
+.topcoat-checkbox__checkmark:after {
   top: 2px;
-  left: 2px;
+  left: 1px;
   opacity: 0;
-  width: 12px;
+  width: 14px;
   height: 4px;
   background: transparent;
   border: 7px solid #fff;
@@ -113,7 +119,7 @@ input[type=&quot;checkbox&quot;]:checked + .topcoat-checkbox:after {
   -ms-transform: rotate(-50deg);
   transform: rotate(-50deg);
 }
-input[type=&quot;checkbox&quot;]:focus + .topcoat-checkbox:before {
+input[type=&quot;checkbox&quot;]:focus + .topcoat-checkbox__checkmark:before {
   border: 1px solid #0940fd;
   -webkit-box-shadow: 0 0 0 2px #6fb5f1;
   box-shadow: 0 0 0 2px #6fb5f1;
