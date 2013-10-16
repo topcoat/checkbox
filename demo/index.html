@@ -69,9 +69,11 @@
                 </div>
                 <div>
                   <h3>CSS</h3>
-                  <pre class="css"><code data-language="css">.topcoat-checkbox__checkmark {
+                  <pre class="css"><code data-language="css">
+.topcoat-checkbox__checkmark {
   height: 1rem;
 }
+
 input[type=&quot;checkbox&quot;] {
   height: 1rem;
   width: 1rem;
@@ -80,26 +82,30 @@ input[type=&quot;checkbox&quot;] {
   margin-bottom: -1rem;
   margin-left: 0;
 }
+
 input[type=&quot;checkbox&quot;]:checked + .topcoat-checkbox__checkmark:after {
   opacity: 1;
 }
+
 .topcoat-checkbox {
   line-height: 1rem;
 }
+
 .topcoat-checkbox__checkmark:before {
   width: 1rem;
   height: 1rem;
   background: #595b5b;
-  border: 1px solid #303233;
-  -webkit-border-radius: 3px;
+  border: 1px solid #333434;
   border-radius: 3px;
-  -webkit-box-shadow: inset 0 1px #727373;
-  box-shadow: inset 0 1px #727373;
+  -webkit-box-shadow: inset 0 1px #737373;
+  box-shadow: inset 0 1px #737373;
 }
+
 .topcoat-checkbox__checkmark {
   width: 1rem;
   height: 1rem;
 }
+
 .topcoat-checkbox__checkmark:after {
   top: 2px;
   left: 1px;
@@ -107,24 +113,35 @@ input[type=&quot;checkbox&quot;]:checked + .topcoat-checkbox__checkmark:after {
   width: 14px;
   height: 4px;
   background: transparent;
-  border: 7px solid #fff;
+  border: 7px solid #c6c8c8;
   border-width: 3px;
   border-top: none;
   border-right: none;
-  -webkit-border-radius: 1px;
   border-radius: 1px;
   -webkit-transform: rotate(-50deg);
-  -moz-transform: rotate(-50deg);
-  -o-transform: rotate(-50deg);
   -ms-transform: rotate(-50deg);
   transform: rotate(-50deg);
 }
+
 input[type=&quot;checkbox&quot;]:focus + .topcoat-checkbox__checkmark:before {
-  border: 1px solid #0940fd;
-  -webkit-box-shadow: 0 0 0 2px #6fb5f1;
-  box-shadow: 0 0 0 2px #6fb5f1;
+  border: 1px solid #0036ff;
+  -webkit-box-shadow: inset 0 1px rgba(255,255,255,0.36), 0 0 0 2px #6fb5f1;
+  box-shadow: inset 0 1px rgba(255,255,255,0.36), 0 0 0 2px #6fb5f1;
 }
-</code></pre>
+
+input[type=&quot;checkbox&quot;]:active + .topcoat-checkbox__checkmark:before {
+  border: 1px solid #333434;
+  background-color: #3f4041;
+  -webkit-box-shadow: inset 0 1px rgba(0,0,0,0.05);
+  box-shadow: inset 0 1px rgba(0,0,0,0.05);
+}
+
+input[type=&quot;checkbox&quot;]:disabled:active + .topcoat-checkbox__checkmark:before {
+  border: 1px solid #333434;
+  background: #595b5b;
+  -webkit-box-shadow: inset 0 1px #737373;
+  box-shadow: inset 0 1px #737373;
+}</code></pre>
                 </div>
               </section>
             </footer>
