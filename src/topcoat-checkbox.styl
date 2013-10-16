@@ -103,3 +103,8 @@ input[type="checkbox"]:active + .topcoat-checkbox__checkmark:before
 input[type="checkbox"]:disabled + .topcoat-checkbox__checkmark
   @extend .checkbox--disabled
 
+input[type="checkbox"]:disabled:active + .topcoat-checkbox__checkmark:before
+  border var-border
+  background var-background-color
+  box-shadow var-box-shadow
+
