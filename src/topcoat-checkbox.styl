@@ -93,8 +93,18 @@ input[type="checkbox"]:checked + .topcoat-checkbox__checkmark:after
 
 input[type="checkbox"]:focus + .topcoat-checkbox__checkmark:before
   border var-border--focus
-  box-shadow var-box-shadow--focus
+  box-shadow var-box-shadow--cta, var-box-shadow--focus
+
+input[type="checkbox"]:active + .topcoat-checkbox__checkmark:before
+  border var-border
+  background-color var-background-color--down
+  box-shadow var-box-shadow--down
 
 input[type="checkbox"]:disabled + .topcoat-checkbox__checkmark
   @extend .checkbox--disabled
+
+input[type="checkbox"]:disabled:active + .topcoat-checkbox__checkmark:before
+  border var-border
+  background var-background-color
+  box-shadow var-box-shadow
 
