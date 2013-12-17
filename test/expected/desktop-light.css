@@ -86,6 +86,7 @@ input[type="checkbox"]:disabled + .topcoat-checkbox__checkmark {
   pointer-events: none;
 }
 
+.topcoat-checkbox__checkmark:before,
 .topcoat-checkbox__checkmark:after {
   content: '';
   position: absolute;
