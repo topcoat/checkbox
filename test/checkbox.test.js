@@ -25,43 +25,43 @@ describe('Topcoat checkbox', function() {
     'use strict';
 
     it('should output correct desktop dark css', function() {
-        var actual = grunt.file.read('css/topcoat-checkbox-desktop-dark.css');
-        var expected = grunt.file.read('test/expected/topcoat-checkbox-desktop-dark.css');
+        var actual = grunt.file.read('css/desktop-dark.css');
+        var expected = grunt.file.read('test/expected/desktop-dark.css');
         assert.equal(actual, expected, 'should generate correct css');
     });
 
     it('should output correct desktop light css', function() {
-        var actual = grunt.file.read('css/topcoat-checkbox-desktop-light.css');
-        var expected = grunt.file.read('test/expected/topcoat-checkbox-desktop-light.css');
+        var actual = grunt.file.read('css/desktop-light.css');
+        var expected = grunt.file.read('test/expected/desktop-light.css');
         assert.equal(actual, expected, 'should generate correct css');
     });
 
     it('should output correct mobile dark css', function() {
-        var actual = grunt.file.read('css/topcoat-checkbox-mobile-dark.css');
-        var expected = grunt.file.read('test/expected/topcoat-checkbox-mobile-dark.css');
+        var actual = grunt.file.read('css/mobile-dark.css');
+        var expected = grunt.file.read('test/expected/mobile-dark.css');
         assert.equal(actual, expected, 'should generate correct css');
     });
 
     it('should output correct mobile light css', function() {
-        var actual = grunt.file.read('css/topcoat-checkbox-mobile-light.css');
-        var expected = grunt.file.read('test/expected/topcoat-checkbox-mobile-light.css');
+        var actual = grunt.file.read('css/mobile-light.css');
+        var expected = grunt.file.read('test/expected/mobile-light.css');
         assert.equal(actual, expected, 'should generate correct css');
     });
 
     it('should not have any unrendered variables desktop dark', function() {
-        var actual = grunt.file.read('css/topcoat-checkbox-desktop-dark.css');
+        var actual = grunt.file.read('css/desktop-dark.css');
         assert.equal(actual.match(/var-[a-z-]*[a-z]+/g), null, 'should not have missing vars');
     });
     it('should not have any unrendered variables desktop light', function() {
-        var actual = grunt.file.read('css/topcoat-checkbox-desktop-light.css');
+        var actual = grunt.file.read('css/desktop-light.css');
         assert.equal(actual.match(/var-[a-z-]*[a-z]+/g), null, 'should not have missing vars');
     });
     it('should not have any unrendered variables mobile dark', function() {
-        var actual = grunt.file.read('css/topcoat-checkbox-mobile-dark.css');
+        var actual = grunt.file.read('css/mobile-dark.css');
         assert.equal(actual.match(/var-[a-z-]*[a-z]+/g), null, 'should not have missing vars');
     });
     it('should not have any unrendered variables mobile light', function() {
-        var actual = grunt.file.read('css/topcoat-checkbox-mobile-light.css');
+        var actual = grunt.file.read('css/mobile-light.css');
         assert.equal(actual.match(/var-[a-z-]*[a-z]+/g), null, 'should not have missing vars');
     });
 

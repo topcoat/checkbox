@@ -20,62 +20,27 @@
 
 module.exports = function(grunt) {
 
-
-    // Project configuration.
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
 
         clean: {
             release: ['css'],
         },
 
-        stylus: {
+        topcoat: {
             options: {
-                paths: grunt.file.expand('node_modules/topcoat-*/src'),
-                compress: false
+                browsers: ['last 2 versions'],
+                namespace: 'topcoat',
+                license: grunt.file.read('test/fixtures/license.txt')
             },
-
-            mobilelight: {
-                options: {
-                    import: ['theme-topcoat-mobile-light'],
-                },
-
+            compile: {
                 files: [{
-                    src: 'src/topcoat-checkbox.styl',
-                    dest: 'css/topcoat-checkbox-mobile-light.css'
-                }]
-            },
-
-            mobiledark: {
-                options: {
-                    import: ['theme-topcoat-mobile-dark'],
-                },
-
-                files: [{
-                    src: 'src/topcoat-checkbox.styl',
-                    dest: 'css/topcoat-checkbox-mobile-dark.css'
-                }]
-            },
-
-            desktoplight: {
-                options: {
-                    import: ['theme-topcoat-desktop-light'],
-                },
-                files: [{
-                    src: 'src/topcoat-checkbox.styl',
-                    dest: 'css/topcoat-checkbox-desktop-light.css'
-                }]
-            },
-
-            desktopdark: {
-                options: {
-                    import: ['theme-topcoat-desktop-dark'],
-                },
-
-                files: [{
-                    src: 'src/topcoat-checkbox.styl',
-                    dest: 'css/topcoat-checkbox-desktop-dark.css'
-                }]
+                        expand: true,
+                        cwd: 'test/fixtures',
+                        src: ['*.css'],
+                        dest: 'css/',
+                        ext: '.css'
+                    }
+                ]
             }
         },
 
@@ -119,26 +84,21 @@ module.exports = function(grunt) {
             all: {
                 src: ['test/*.test.js']
             }
-        },
-
-        watch: {
-            files: 'src/**/*.styl',
-            tasks: ['build', 'test']
         }
 
     });
 
     // These plugins provide necessary tasks.
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-simple-mocha');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-topcoat');
     grunt.loadNpmTasks('grunt-topdoc');
-    grunt.loadNpmTasks('grunt-autoprefixer');
 
     grunt.registerTask('default', ['clean', 'build', 'test','release']);
-    grunt.registerTask('build', ['stylus', 'autoprefixer']);
+    grunt.registerTask('build', ['topcoat']);
     grunt.registerTask('test', ['simplemocha']);
     grunt.registerTask('release', ['cssmin', 'topdoc']);
+
 };
+

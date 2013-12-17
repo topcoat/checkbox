@@ -3,6 +3,7 @@
   "version": "0.5.0",
   "description": "Default styling for Topcoat checkbox",
   "main": "index.html",
+  "style": "src/checkbox.css",
   "directories": {
     "test": "test",
     "lib": "src",
@@ -26,18 +27,18 @@
   "license": "Apache2",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-watch": "~0.3.1",
-    "grunt-contrib-stylus": "~0.5.0",
     "grunt-contrib-clean": "~0.4.1",
-    "grunt-contrib-cssmin": "~0.6.0",
+    "grunt-contrib-cssmin": "~0.6.2",
     "grunt-simple-mocha": "~0.4.0",
-    "grunt-topdoc": "~0.1.3",
-    "topdoc-theme": "~0.2.6",
-    "grunt-autoprefixer": "~0.3.1"
+    "topcoat-theme-mobile-dark": "~0.1.6",
+    "topcoat-theme-mobile-light": "~0.1.5",
+    "topcoat-theme-desktop-light": "~0.1.7",
+    "topcoat-theme-desktop-dark": "~0.1.5",
+    "topdoc-theme": "~0.4.0",
+    "grunt-topdoc": "~0.2.0",
+    "grunt-topcoat": "~0.1.1"
   },
   "dependencies": {
-    "topcoat-utils": "~0.2.0",
-    "topcoat-checkbox-base": "~0.1.3",
-    "topcoat-theme": "~0.6.2"
+    "topcoat-checkbox-base": "~0.1.3"
   }
 }
