@@ -1,156 +1,0 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Topcoat</title>
-    <meta name="viewport" content="user-scalable=no,initial-scale = 1.0,maximum-scale = 1.0">
-    <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
-    <link rel="stylesheet" type="text/css" href="../css/topcoat-checkbox-mobile-light.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/brackets.css"><!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  </head>
-  <body class="light">
-    <div id="wrapper">
-      <div class="max-width">
-        <div id="sideNav">
-          <nav class="site">
-            <ul>
-              <li><a href="http://topcoat.io">Home</a></li>
-            </ul>
-          </nav>
-          <div class="combo">
-            <select class="docNav">
-              <option value="index.html">Topcoat Checkbox Desktop Dark</option>
-              <option value="topcoat-checkbox-desktop-light.html">Topcoat Checkbox Desktop Light</option>
-              <option value="topcoat-checkbox-mobile-dark.html">Topcoat Checkbox Mobile Dark</option>
-              <option value="topcoat-checkbox-mobile-light.html" selected="selected">Topcoat Checkbox Mobile Light</option>
-            </select>
-          </div>
-          <div id="pageNav">
-            <ul>
-              <li><a href="#checkbox">Checkbox</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div id="site">
-        <header id="main-header">
-          <div class="max-width">
-            <hgroup>
-              <h1><a href="http://topcoat.io">Topcoat</a></h1>
-              <p>CSS for clean and fast web apps</p>
-            </hgroup>
-            <nav>
-              <ul>
-              </ul>
-            </nav><a id="slide-menu-button" class="topcoat-icon-button--large--quiet"><span class="topcoat-icon--large topcoat-icon--menu-stack"></span></a>
-          </div>
-        </header>
-        <div id="content" class="max-width">
-          <article id="checkbox" class="component">
-            <header>
-              <h2>Checkbox</h2>
-            </header>
-            <section class="component"><label class="topcoat-checkbox">  <input type="checkbox">  <div class="topcoat-checkbox__checkmark"></div>  Default</label><br><br><label class="topcoat-checkbox">  <input type="checkbox" disabled>  <div class="topcoat-checkbox__checkmark"></div>  Disabled</label></section>
-            <section class="examples">
-              <h4>Examples</h4>
-              <ul>
-                <li><a href="http://codepen.io/Topcoat/pen/piHcs">mobile checkbox</a></li>
-              </ul>
-            </section>
-            <footer>
-              <div class="showcode"><a href="#">Show code snippets</a></div>
-              <section class="code">
-                <div>
-                  <h3>HTML</h3>
-                  <pre class="html"><code data-language="html">&lt;label class=&quot;topcoat-checkbox&quot;&gt;  &lt;input type=&quot;checkbox&quot;&gt;  &lt;div class=&quot;topcoat-checkbox__checkmark&quot;&gt;&lt;/div&gt;  Default&lt;/label&gt;&lt;br&gt;&lt;br&gt;&lt;label class=&quot;topcoat-checkbox&quot;&gt;  &lt;input type=&quot;checkbox&quot; disabled&gt;  &lt;div class=&quot;topcoat-checkbox__checkmark&quot;&gt;&lt;/div&gt;  Disabled&lt;/label&gt;</code></pre>
-                </div>
-                <div>
-                  <h3>CSS</h3>
-                  <pre class="css"><code data-language="css">
-.topcoat-checkbox__checkmark {
-  height: 2rem;
-}
-
-input[type=&quot;checkbox&quot;] {
-  height: 2rem;
-  width: 2rem;
-  margin-top: 0;
-  margin-right: -2rem;
-  margin-bottom: -2rem;
-  margin-left: 0;
-}
-
-input[type=&quot;checkbox&quot;]:checked + .topcoat-checkbox__checkmark:after {
-  opacity: 1;
-}
-
-.topcoat-checkbox {
-  line-height: 2rem;
-}
-
-.topcoat-checkbox__checkmark:before {
-  width: 2rem;
-  height: 2rem;
-  background: #e5e9e8;
-  border: 1px solid #9daca9;
-  border-radius: 3px;
-  -webkit-box-shadow: inset 0 1px #fff;
-  box-shadow: inset 0 1px #fff;
-}
-
-.topcoat-checkbox__checkmark {
-  width: 2rem;
-  height: 2rem;
-}
-
-.topcoat-checkbox__checkmark:after {
-  top: 1px;
-  left: 2px;
-  opacity: 0;
-  width: 28px;
-  height: 11px;
-  background: transparent;
-  border: 7px solid #454545;
-  border-width: 7px;
-  border-top: none;
-  border-right: none;
-  border-radius: 2px;
-  -webkit-transform: rotate(-50deg);
-  -ms-transform: rotate(-50deg);
-  transform: rotate(-50deg);
-}
-
-input[type=&quot;checkbox&quot;]:focus + .topcoat-checkbox__checkmark:before {
-  border: 1px solid #0036ff;
-  -webkit-box-shadow: inset 0 1px rgba(255,255,255,0.36), 0 0 0 2px #6fb5f1;
-  box-shadow: inset 0 1px rgba(255,255,255,0.36), 0 0 0 2px #6fb5f1;
-}
-
-input[type=&quot;checkbox&quot;]:active + .topcoat-checkbox__checkmark:before {
-  border: 1px solid #9daca9;
-  background-color: #d2d6d6;
-  -webkit-box-shadow: inset 0 1px rgba(0,0,0,0.1);
-  box-shadow: inset 0 1px rgba(0,0,0,0.1);
-}
-
-input[type=&quot;checkbox&quot;]:disabled:active + .topcoat-checkbox__checkmark:before {
-  border: 1px solid #9daca9;
-  background: #e5e9e8;
-  -webkit-box-shadow: inset 0 1px #fff;
-  box-shadow: inset 0 1px #fff;
-}</code></pre>
-                </div>
-              </section>
-            </footer>
-          </article>
-        </div>
-        <footer></footer>
-      </div>
-    </div>
-    <script src="js/rainbow-custom.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
-</html>
